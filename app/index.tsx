@@ -1,27 +1,11 @@
-import { StyleSheet, View } from "react-native";
-import { StatusBar } from "expo-status-bar";
-
-import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
-
-import { BACKGROUND_COLOR, FONT_FAMILIES } from "../constants";
-import {
-  WINDOW_WIDTH,
-  WINDOW_HEIGHT,
-} from "../components/tournament-list-item";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import {
-  BlurMask,
-  Canvas,
-  LinearGradient,
-  Rect,
-} from "@shopify/react-native-skia";
-import { Tournaments, User } from "@/data";
-import TournamentList from "@/components/tournament-list";
+import * as SplashScreen from "expo-splash-screen";
+import { StatusBar } from "expo-status-bar";
+import { useFonts } from "expo-font";
 import { useEffect } from "react";
-import TournamentAvatar from "@/components/tournament-avatar";
-import TournamentLocation from "@/components/tournament-location";
-import TournamentHeader from "@/components/tournament-header";
+
+import Home from "@/screens/home";
+import { FONT_FAMILIES } from "../constants";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -41,34 +25,11 @@ const index = () => {
     return null;
   }
   return (
-    <GestureHandlerRootView style={styles.container}>
+    <GestureHandlerRootView>
       <StatusBar style="light" />
-      <Canvas style={styles.background}>
-        <Rect x={0} y={0} width={WINDOW_WIDTH} height={WINDOW_HEIGHT}>
-          {/* <BlurMask blur={2} style="normal" /> */}
-          <LinearGradient
-            start={{ x: 0, y: 0 }}
-            end={{ x: 0, y: WINDOW_HEIGHT }}
-            colors={["transparent", "rgba(0,0,0,0.8)"]}
-          />
-        </Rect>
-      </Canvas>
-      <TournamentHeader {...User} />
-      <TournamentList data={Tournaments} />
+      <Home />
     </GestureHandlerRootView>
   );
 };
 
 export default index;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: BACKGROUND_COLOR,
-    // justifyContent: "center",
-    // alignItems: "center",
-  },
-  background: {
-    ...StyleSheet.absoluteFillObject,
-  },
-});
