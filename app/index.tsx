@@ -16,11 +16,12 @@ import {
   LinearGradient,
   Rect,
 } from "@shopify/react-native-skia";
-import { Tournaments } from "@/data";
+import { Tournaments, User } from "@/data";
 import TournamentList from "@/components/tournament-list";
 import { useEffect } from "react";
 import TournamentAvatar from "@/components/tournament-avatar";
 import TournamentLocation from "@/components/tournament-location";
+import TournamentHeader from "@/components/tournament-header";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -52,11 +53,7 @@ const index = () => {
           />
         </Rect>
       </Canvas>
-      <TournamentAvatar
-        profile={require("../assets/images/game_1.jpg")}
-        name="MANGA Philippe"
-      />
-      <TournamentLocation town="Yaounde" countryCode="cmr" />
+      <TournamentHeader {...User} />
       <TournamentList data={Tournaments} />
     </GestureHandlerRootView>
   );

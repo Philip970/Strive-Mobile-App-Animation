@@ -1,26 +1,20 @@
-import {
-  Image,
-  ImageSourcePropType,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
-import React from "react";
-import { COLORS, FONT_FAMILIES } from "@/constants";
 import Animated, { FadeInDown } from "react-native-reanimated";
+import { ImageSourcePropType, StyleSheet, View } from "react-native";
+
+import { COLORS, FONT_FAMILIES } from "@/constants";
 
 type Props = {
   name: string;
-  profile?: ImageSourcePropType;
+  image?: ImageSourcePropType;
 };
 
-const TournamentAvatar = ({ name, profile }: Props) => {
+const TournamentAvatar = ({ name, image }: Props) => {
   return (
     <View style={styles.container}>
-      {profile ? (
+      {image ? (
         <Animated.Image
           entering={FadeInDown.delay(1000)}
-          source={profile}
+          source={image}
           style={styles.image}
         />
       ) : (
@@ -36,14 +30,14 @@ export default TournamentAvatar;
 
 const styles = StyleSheet.create({
   container: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: COLORS.lightGrayTransparent,
   },
-  image: { width: 60, height: 60, borderRadius: 30 },
+  image: { width: 40, height: 40, borderRadius: 20 },
   name: {
     color: COLORS.White,
     fontSize: 32,
