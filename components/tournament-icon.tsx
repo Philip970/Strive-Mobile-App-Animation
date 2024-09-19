@@ -1,0 +1,33 @@
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { View } from "react-native";
+
+type Props = {
+  name: string;
+  color?: string;
+  size?: number;
+  backgroundColor?: string;
+};
+
+const TournamentIcon = ({
+  name,
+  size = 24,
+  color = "white",
+  backgroundColor,
+}: Props) => {
+  return (
+    <View
+      style={{
+        backgroundColor,
+        width: size,
+        height: size,
+        borderRadius: size / 2,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Ionicons name={name} size={24} color={color} />
+    </View>
+  );
+};
+
+export default TournamentIcon;

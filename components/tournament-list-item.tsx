@@ -20,6 +20,7 @@ import { COLORS, FONT_FAMILIES } from "@/constants";
 import { useEffect } from "react";
 import { Tournament } from "@/data";
 import TournamentItemDetail from "./tournament-item-detail";
+import TournamentIcon from "./tournament-icon";
 
 const MINIMUM_SWIPE_WIDTH = 1;
 
@@ -144,7 +145,15 @@ export const TournamentListItem: React.FC<TournamentListItemProps> = ({
           ]}
         >
           <View>
-            <Image source={game.image} style={styles.image} />
+            <View style={styles.itemHeader}>
+              <Image source={game.image} style={styles.image} />
+              <TournamentIcon
+                name="bookmark"
+                backgroundColor="#f5f5f5"
+                color="black"
+                size={80}
+              />
+            </View>
             <Text style={styles.name}>{game.name}</Text>
             <View style={styles.detailContainer}>
               <TournamentItemDetail
@@ -184,6 +193,11 @@ const styles = StyleSheet.create({
     width: 200,
     height: 80,
     borderRadius: 16,
+  },
+  itemHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   detailContainer: { flexDirection: "row", gap: 16, marginTop: 16 },
   name: {
