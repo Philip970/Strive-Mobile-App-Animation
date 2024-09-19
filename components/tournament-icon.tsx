@@ -20,7 +20,7 @@ const TournamentIcon = ({
         backgroundColor,
         width: size,
         height: size,
-        borderRadius: size / 2,
+        borderRadius: backgroundColor ? size / 2 : 0,
         justifyContent: "center",
         alignItems: "center",
       }}
