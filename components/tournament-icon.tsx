@@ -11,7 +11,7 @@ type Props = {
 const TournamentIcon = ({
   name,
   size = 24,
-  color = "white",
+  color = "black",
   backgroundColor,
 }: Props) => {
   return (

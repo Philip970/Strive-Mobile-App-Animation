@@ -16,6 +16,14 @@ export type Tournament = {
   slotAvailable: number;
 };
 
+export type User = {
+  name: string;
+  avatar: ImageSourcePropType;
+  town: string;
+  country: string;
+  countryCode: string;
+};
+
 export const Games: Game[] = [
   {
     id: 0,
@@ -24,6 +32,14 @@ export const Games: Game[] = [
     icon: require("./assets/images/game_1_logo.png"),
   },
 ];
+
+export const User = {
+  name: "MANGA Philippe",
+  avatar: require("./assets/images/game_1.jpg"),
+  town: "Yaounde",
+  country: "Cameroon",
+  countryCode: "Cmr",
+};
 
 export const Tournaments: Tournament[] = [
   {
