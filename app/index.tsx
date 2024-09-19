@@ -1,25 +1,22 @@
 import { StyleSheet, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
-import { BACKGROUND_COLOR, Stories } from "../constants";
+import { BACKGROUND_COLOR } from "../constants";
 import {
-  TORNAMENT_LIST_ITEM_HEIGHT,
-  TornamentListItem,
   WINDOW_WIDTH,
   WINDOW_HEIGHT,
-  MARGING,
-} from "../components/tornament-list-item";
+} from "../components/tournament-list-item";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { useState } from "react";
 import {
   BlurMask,
   Canvas,
   LinearGradient,
   Rect,
 } from "@shopify/react-native-skia";
+import { Tournaments } from "@/data";
+import TournamentList from "@/components/tournament-list";
 
 const index = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
   return (
     <GestureHandlerRootView style={styles.container}>
       <StatusBar style="light" />
@@ -33,24 +30,7 @@ const index = () => {
           />
         </Rect>
       </Canvas>
-      <View
-        style={{
-          width: "100%",
-          height: TORNAMENT_LIST_ITEM_HEIGHT + MARGING * 2,
-        }}
-      >
-        {Stories.map((story, index) => {
-          return (
-            <TornamentListItem
-              index={index}
-              activeIndex={activeIndex}
-              itemCount={Stories.length}
-              setActiveIndex={setActiveIndex}
-              key={index}
-            />
-          );
-        })}
-      </View>
+      <TournamentList data={Tournaments} />
     </GestureHandlerRootView>
   );
 };
