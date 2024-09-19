@@ -5,7 +5,6 @@ import {
   Pressable,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
 } from "react-native";
 import Animated, {
@@ -17,7 +16,7 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 
-import { COLORS } from "@/constants";
+import { COLORS, FONT_FAMILIES } from "@/constants";
 import { useEffect } from "react";
 import { Tournament } from "@/data";
 import TournamentItemDetail from "./tournament-item-detail";
@@ -192,6 +191,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     marginTop: 16,
     textTransform: "uppercase",
+    fontFamily: FONT_FAMILIES.RubikMono,
   },
   joinButton: {
     backgroundColor: "#ff5252",
@@ -199,7 +199,13 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     alignItems: "center",
     justifyContent: "center",
+
     padding: 16,
   },
-  join: { color: "white", fontWeight: "bold", fontSize: 28 },
+  join: {
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 24,
+    fontFamily: FONT_FAMILIES.RubikMono,
+  },
 });

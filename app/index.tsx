@@ -1,7 +1,10 @@
 import { StyleSheet, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
-import { BACKGROUND_COLOR } from "../constants";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+
+import { BACKGROUND_COLOR, FONT_FAMILIES } from "../constants";
 import {
   WINDOW_WIDTH,
   WINDOW_HEIGHT,
@@ -15,8 +18,25 @@ import {
 } from "@shopify/react-native-skia";
 import { Tournaments } from "@/data";
 import TournamentList from "@/components/tournament-list";
+import { useEffect } from "react";
+
+SplashScreen.preventAutoHideAsync();
 
 const index = () => {
+  const [loaded, error] = useFonts({
+    [FONT_FAMILIES.Rubik]: require("../assets/fonts/Rubik-VariableFont_wght.ttf"),
+    [FONT_FAMILIES.RubikMono]: require("../assets/fonts/RubikMonoOne-Regular.ttf"),
+  });
+
+  useEffect(() => {
+    if (loaded || error) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded, error]);
+
+  if (!loaded && !error) {
+    return null;
+  }
   return (
     <GestureHandlerRootView style={styles.container}>
       <StatusBar style="light" />

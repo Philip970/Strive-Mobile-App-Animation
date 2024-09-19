@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { FONT_FAMILIES } from "@/constants";
 
 type Props = {
   icon: string;
@@ -30,5 +31,6 @@ const styles = StyleSheet.create({
   value: {
     marginLeft: 8,
     fontSize: 16,
+    fontFamily: FONT_FAMILIES.Rubik,
   },
 });
