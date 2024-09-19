@@ -32,9 +32,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     backgroundColor: COLORS.lightGrayTransparent,
-    height: 60,
-    borderRadius: 40,
-    padding: 16,
+    height: 50,
+    borderRadius: 50,
+    paddingHorizontal: 16,
     flex: 1,
   },
   town: {

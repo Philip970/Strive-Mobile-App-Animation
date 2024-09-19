@@ -13,12 +13,12 @@ const TournamentAvatar = ({ name, image }: Props) => {
     <View style={styles.container}>
       {image ? (
         <Animated.Image
-          entering={FadeInDown.delay(1000)}
+          entering={FadeInDown.delay(400)}
           source={image}
           style={styles.image}
         />
       ) : (
-        <Animated.Text entering={FadeInDown.delay(1000)} style={styles.name}>
+        <Animated.Text entering={FadeInDown.delay(400)} style={styles.name}>
           {name[0]}
         </Animated.Text>
       )}
@@ -30,14 +30,14 @@ export default TournamentAvatar;
 
 const styles = StyleSheet.create({
   container: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    width: 50,
+    height: 50,
+    borderRadius: 50,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: COLORS.lightGrayTransparent,
   },
-  image: { width: 40, height: 40, borderRadius: 20 },
+  image: { width: 40, height: 40, borderRadius: 40 },
   name: {
     color: COLORS.White,
     fontSize: 32,
