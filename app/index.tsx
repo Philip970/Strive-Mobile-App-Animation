@@ -19,6 +19,7 @@ import {
 import { Tournaments } from "@/data";
 import TournamentList from "@/components/tournament-list";
 import { useEffect } from "react";
+import TournamentAvatar from "@/components/tournament-avatar";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -50,6 +51,10 @@ const index = () => {
           />
         </Rect>
       </Canvas>
+      <TournamentAvatar
+        profile={require("../assets/images/game_1.jpg")}
+        name="MANGA Philippe"
+      />
       <TournamentList data={Tournaments} />
     </GestureHandlerRootView>
   );
@@ -61,8 +66,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: BACKGROUND_COLOR,
-    justifyContent: "center",
-    alignItems: "center",
+    // justifyContent: "center",
+    // alignItems: "center",
   },
   background: {
     ...StyleSheet.absoluteFillObject,

@@ -16,7 +16,7 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 
-import { COLORS, FONT_FAMILIES } from "@/constants";
+import { FONT_FAMILIES } from "@/constants";
 import { useEffect } from "react";
 import { Tournament } from "@/data";
 import TournamentItemDetail from "./tournament-item-detail";
@@ -137,8 +137,6 @@ export const TournamentListItem: React.FC<TournamentListItemProps> = ({
           style={[
             {
               width: TOURNAMENT_LIST_ITEM_WIDTH,
-              // height: TOURNAMENT_LIST_ITEM_HEIGHT,
-              // backgroundColor: COLORS[index],
               backgroundColor: "#fff",
             },
             styles.container,

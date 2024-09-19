@@ -5,4 +5,9 @@ export const FONT_FAMILIES = {
 
 export const BACKGROUND_COLOR = "#cdcdcd";
 
-export const COLORS = ["#FFD700", "#00FF7F", "#FF6347", "#87CEEB", "#FF69B4"];
+export const COLORS = {
+  White: "#FFFFFF",
+  lightGray: "#f5f5f5",
+  lightGrayTransparent: "#f5f5f550",
+  danger: "#ff5252",
+};
