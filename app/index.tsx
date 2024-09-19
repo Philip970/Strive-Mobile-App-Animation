@@ -20,6 +20,7 @@ import { Tournaments } from "@/data";
 import TournamentList from "@/components/tournament-list";
 import { useEffect } from "react";
 import TournamentAvatar from "@/components/tournament-avatar";
+import TournamentLocation from "@/components/tournament-location";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -55,6 +56,7 @@ const index = () => {
         profile={require("../assets/images/game_1.jpg")}
         name="MANGA Philippe"
       />
+      <TournamentLocation town="Yaounde" countryCode="cmr" />
       <TournamentList data={Tournaments} />
     </GestureHandlerRootView>
   );
